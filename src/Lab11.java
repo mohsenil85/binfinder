@@ -1,7 +1,8 @@
+import java.util.ArrayList;
 /**
  * The recursive methods for Lab 11. 
  * 
- * @author (your name) 
+ * @author (logan mohseni) 
  * @version November 20, 2012
  */
 
@@ -15,9 +16,22 @@ public class Lab11
      * @return      a String representation of the binary number
      */
     
+	//public ArrayList<Integer> numbsArr = new ArrayList();
     public static String convertToBinary(int number)
     {
+    	ArrayList<Integer> numbsArr = new ArrayList<Integer>();
+    	
+    
+    	if (number % 2 == 0)
+    		numbsArr.add(1);
+    	else
+    		numbsArr.add(0);
+    		convertToBinary(number - (number % 2));
+    	
+    	return numbsArr.toString();
     }
+    
+    
     
     /**
      * Find the largest item in an array of integers.  
@@ -42,5 +56,6 @@ public class Lab11
     
     private static int largestArrayItemAuxiliary(int [] numbers, int index)
     {
+    	return 0;
     }
 }

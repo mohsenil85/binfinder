@@ -1,11 +1,11 @@
 /**
- * Driver program for Lab 11.
+ * Main program for Lab 11.
  * 
  * @author John Paxton 
  * @version November 20, 2012
  */
 
-public class Driver
+public class Main 
 {
     public static void main (String [] args)
     {   
