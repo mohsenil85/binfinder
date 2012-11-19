@@ -16,22 +16,28 @@ public class Lab11
      * @return      a String representation of the binary number
      */
     
-	//public ArrayList<Integer> numbsArr = new ArrayList();
+	//ArrayList<Integer> numbsArr = new ArrayList<Integer>();
     public static String convertToBinary(int number)
     {
     	ArrayList<Integer> numbsArr = new ArrayList<Integer>();
     	
-    
-    	if (number % 2 == 0)
-    		numbsArr.add(1);
-    	else
-    		numbsArr.add(0);
-    		convertToBinary(number - (number % 2));
-    	
+    		
     	return numbsArr.toString();
     }
     
+    private static int binDigits (int n){
+    	if (n % 2 == 0)
+    		return 1;
+    	else
+    		return 0;
+    }
     
+    private ArrayList<Integer> recurse(int n){
+    	ArrayList<Integer> recursArr = new ArrayList<Integer>();
+    	
+    	return recursArr;
+    	
+    }
     
     /**
      * Find the largest item in an array of integers.  
