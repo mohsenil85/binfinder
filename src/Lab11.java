@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 /**
  * The recursive methods for Lab 11. 
  * 
@@ -15,30 +14,27 @@ public class Lab11
      * @param       number      the decimal number to convert
      * @return      a String representation of the binary number
      */
-    
-	//ArrayList<Integer> numbsArr = new ArrayList<Integer>();
+	
     public static String convertToBinary(int number)
     {
-    	ArrayList<Integer> numbsArr = new ArrayList<Integer>();
-    	
-    		
-    	return numbsArr.toString();
+    	return recurse(number).toString();
     }
-    
-    private static int binDigits (int n){
-    	if (n % 2 == 0)
-    		return 1;
-    	else
-    		return 0;
-    }
-    
-    private ArrayList<Integer> recurse(int n){
-    	ArrayList<Integer> recursArr = new ArrayList<Integer>();
-    	
-    	return recursArr;
-    	
-    }
-    
+   	
+    public static Integer recurse(int n)
+    {
+    	int result = 1;
+    	int remainder = 1;
+    	int factor = 1;
+
+        if (n != 0)
+        {
+             remainder = n % 2;
+             result = result + remainder * factor;
+             factor = factor * 10;
+             recurse(n / 2);
+        }
+        return result;
+    } 
     /**
      * Find the largest item in an array of integers.  
      * Assume the array contains at least one item.
