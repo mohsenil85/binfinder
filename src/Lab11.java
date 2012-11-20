@@ -5,6 +5,7 @@
  * @version November 20, 2012
  */
 import java.util.ArrayList;
+
 public class Lab11
 {
     /**
@@ -16,20 +17,35 @@ public class Lab11
      */
 	
 	private static ArrayList<Integer> logsArr = new ArrayList<Integer>();
-	
+	private static ArrayList<Integer> returnArr = new ArrayList<Integer>();
+	private static int remainder = 0;
     public static String convertToBinary(int number)
     {
-    	return logsArr.toString();
+    	recurse(number);
+    	
+    	return returnArr.toString();
     }
    	
-    public static void recurse(int n)
+    public static void recurse(int number)
     {
-    	if (n == 0)
+    	returnArr.clear();
+    	int n = number;
+    	if (n <= 0){
+    		for (int i : logsArr){
+    			returnArr.add(i);
+    		}
+    		logsArr.clear();
     		return;
-    	else{
-    		logsArr.add(0, (n % 2));
-    		recurse(n/2);
-    		
+    	}else{
+    		remainder = (n % 2);
+    		n = (n - (remainder) / 2);
+    		logsArr.add(0, remainder);
+    		if (remainder == 0)
+    			recurse(n/2);
+    		else{
+    			remainder = 0;
+    			recurse(n/2);
+    		}
     	}
     } 
     /**
@@ -54,6 +70,7 @@ public class Lab11
      */
     
     private static int largestArrayItemAuxiliary(int [] numbers, int index)
+    
     {
     	return 0;
     }
