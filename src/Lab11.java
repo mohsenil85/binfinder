@@ -4,7 +4,7 @@
  * @author (logan mohseni) 
  * @version November 20, 2012
  */
-
+import java.util.ArrayList;
 public class Lab11
 {
     /**
@@ -15,25 +15,22 @@ public class Lab11
      * @return      a String representation of the binary number
      */
 	
+	private static ArrayList<Integer> logsArr = new ArrayList<Integer>();
+	
     public static String convertToBinary(int number)
     {
-    	return recurse(number).toString();
+    	return logsArr.toString();
     }
    	
-    public static Integer recurse(int n)
+    public static void recurse(int n)
     {
-    	int result = 1;
-    	int remainder = 1;
-    	int factor = 1;
-
-        if (n != 0)
-        {
-             remainder = n % 2;
-             result = result + remainder * factor;
-             factor = factor * 10;
-             recurse(n / 2);
-        }
-        return result;
+    	if (n == 0)
+    		return;
+    	else{
+    		logsArr.add(0, (n % 2));
+    		recurse(n/2);
+    		
+    	}
     } 
     /**
      * Find the largest item in an array of integers.  
